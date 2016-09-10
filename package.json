@@ -44,7 +44,6 @@
   ],
   "license": "MIT",
   "main": "src/",
-  "noScopeName": "os-info-server",
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
   },
@@ -67,6 +66,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "prod-test": "curl $NOW_URL"
   },
+  "dependencies": {},
   "devDependencies": {
     "ban-sensitive-files": "1.8.3",
     "deps-ok": "1.2.0",
