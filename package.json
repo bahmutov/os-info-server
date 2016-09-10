@@ -64,7 +64,8 @@
     "test": "npm run unit",
     "unit": "mocha src/*-spec.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "prod-test": "curl $NOW_URL"
+    "prod-test": "curl $NOW_URL",
+    "start": "node ."
   },
   "dependencies": {},
   "devDependencies": {
