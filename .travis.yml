@@ -10,7 +10,7 @@ node_js:
 before_script:
   - npm prune
 script:
-  - node index.js &
+  - node . &
   - curl localhost:4000
 after_success:
   - npm run semantic-release
