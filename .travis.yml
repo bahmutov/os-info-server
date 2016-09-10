@@ -12,7 +12,7 @@ before_script:
 script:
   - node . &
   - npm i -g now-pipeline
-  - now-pipeline --test "npm run prod-test"
+  - DEBUG=now-pipeline now-pipeline --test "npm run prod-test"
   - now-pipeline-prune
 after_success:
   - npm run semantic-release
