@@ -12,6 +12,9 @@ before_script:
 script:
   - node . &
   - curl localhost:4000
+  - npm i -g now-pipeline
+  - now-pipeline --test "npm run prod-test"
+  - now-pipeline-prune
 after_success:
   - npm run semantic-release
 branches:

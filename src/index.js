@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+'use strict'
+
 const port = process.env.PORT || 4000
 const os = require('os')
 
