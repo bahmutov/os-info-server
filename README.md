@@ -33,7 +33,8 @@ OS info
 }
 ```
 
-Useful for checking deployed server performance.
+Useful for checking deployed server performance, uses Node built-in
+[os](https://nodejs.org/api/os.html) module.
 
 ### Small print
 
