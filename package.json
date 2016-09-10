@@ -1,0 +1,76 @@
+{
+  "name": "os-info-server",
+  "description": "Small Node server that reports available OS parameters, like free memory and CPU load",
+  "version": "1.0.0",
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "bugs": "https://github.com/bahmutov/os-info-server/issues",
+  "config": {
+    "pre-git": {
+      "commit-msg": "simple",
+      "pre-commit": [
+        "npm prune",
+        "npm run deps",
+        "npm test",
+        "npm run ban"
+      ],
+      "pre-push": [
+        "npm run secure",
+        "npm run license",
+        "npm run ban -- --all",
+        "npm run size"
+      ],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "src/*.js",
+    "!src/*-spec.js"
+  ],
+  "homepage": "https://github.com/bahmutov/os-info-server#readme",
+  "keywords": [
+    "cpu",
+    "load",
+    "memory",
+    "os",
+    "server",
+    "utility"
+  ],
+  "license": "MIT",
+  "main": "src/",
+  "noScopeName": "os-info-server",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/os-info-server.git"
+  },
+  "scripts": {
+    "ban": "ban",
+    "deps": "deps-ok",
+    "format": "standard-format -w src/*.js",
+    "issues": "git-issues",
+    "license": "license-checker --production --onlyunknown --csv",
+    "lint": "standard --verbose src/*.js",
+    "pretest": "npm run format && npm run lint",
+    "secure": "nsp check",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
+    "test": "npm run unit",
+    "unit": "mocha src/*-spec.js"
+  },
+  "devDependencies": {
+    "ban-sensitive-files": "1.8.3",
+    "deps-ok": "1.2.0",
+    "git-issues": "1.2.0",
+    "license-checker": "8.0.0",
+    "mocha": "3.0.2",
+    "nsp": "2.6.1",
+    "pre-git": "3.10.0",
+    "standard": "8.0.0",
+    "standard-format": "2.2.3"
+  }
+}
