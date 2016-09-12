@@ -67,7 +67,10 @@
     "prod-test": "curl $NOW_URL",
     "start": "node ."
   },
-  "dependencies": {},
+  "dependencies": {
+    "pretty-bytes": "4.0.2",
+    "pretty-ms": "2.1.0"
+  },
   "devDependencies": {
     "ban-sensitive-files": "1.8.3",
     "deps-ok": "1.2.0",
